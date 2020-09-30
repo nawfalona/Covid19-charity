@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+				<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+				<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+				<style>
+					body { margin: 0; padding: 0; }
+					#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+					#fly {
+						display: block;
+						position: relative;
+						margin: 0px auto;
+						width: 50%;
+						height: 40px;
+						padding: 10px;
+						border: none;
+						border-radius: 3px;
+						font-size: 12px;
+						text-align: center;
+						color: #fff;
+						background: green;
+						}
+				</style>	
+			</head>
+			<body>
+				
+							<div id="map"></div>
+							<br />
+							<button id="fly">Locate</button>
+							<script>
+								mapboxgl.accessToken = '<insert ur public key>';
+								var map = new mapboxgl.Map({
+									container: 'map',
+									style: 'mapbox://styles/mapbox/streets-v11'
+								});
+
+								map.on('load', function() {
+									map.loadImage(
+										'images/doctor.png',
+										function(error, image) {
+											if (error) throw error;
+											map.addImage('cat', image);
+											map.addSource('point', {
+												'type': 'geojson',
+												'data': {
+													'type': 'FeatureCollection',
+													'features': [{
+														'type': 'Feature',
+														'geometry': {
+															'type': 'Point',
+															'coordinates': [101.7252607, 2.9638501]
+														}
+													}]
+												}
+											});
+											map.addLayer({
+												'id': 'points',
+												'type': 'symbol',
+												'source': 'point',
+												'layout': {
+													'icon-image': 'cat',
+													'icon-size': 0.25
+												}
+											});
+										}
+									);
+								});
+								document.getElementById('fly').addEventListener('click', function () {
+								map.flyTo({
+								center: [
+								101.7252607 + (Math.random() - 0.5) * 10,
+								2.9638501 + (Math.random() - 0.5) * 10
+								],
+								essential: true
+								});
+								});
+								</script>
+
+											</body>
+										</html>
