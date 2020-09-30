@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Covid-19 by ybssc</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+	</head>
+
+	<script>
+		var xmlhttp = new XMLHttpRequest();
+		var url = "https://www.trackcorona.live/api/countries/my";
+
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var myArr = JSON.parse(this.responseText);
+				printstats(myArr.data[0]);
+			}
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+
+		function printstats(arr) {
+			document.getElementById("cases").innerHTML = arr.confirmed;
+			document.getElementById("deaths").innerHTML = arr.dead;
+			document.getElementById("recovered").innerHTML = arr.recovered;
+			document.getElementById("updateby").innerHTML = arr.updated;
+		}
+	</script>
+
+	<body class="homepage">
+
+		<!-- Header -->
+			<div id="header">
+				<div class="container">
+						
+					<!-- Logo -->
+						<h1><a href="index.html" id="logo">Covid-19</a></h1>
+					
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="statistics.html">Epidemic Statistics</a></li>
+								<li><a href="support.html">Support</a></li>
+								<li>
+									<a href="">Volunteer</a>
+									<ul>
+										<li><a href="Donation.html">Donation</a></li>
+										<li><a href="Giveaway.html">Giveaway</a></li>
+									</ul>
+								</li>
+								<li><a href="aboutus.html">About Us</a></li>
+								<li ><a style="font-size:150%; color:gray; background-color:cyan;" href="right-sidebar.html"><span class="fa fa-sign-in"></span><b> SignUp | Login</b></a></li>
+							</ul>
+						</nav>
+
+
+					<!-- Banner -->
+						<div id="banner">
+							<div class="container">
+								<section>
+									<header class="major">
+										<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+										<!--<h2>Coronavirus (COVID-19)</h2>-->
+										<span class="byline">Your portal to social aids and various infomations about COVID-19 Pandemic Current Situation In Malaysia</span>
+									</header>
+									<a href="#" class="button alt">Request Support</a>
+								</section>			
+							</div>
+						</div>
+
+				</div>
+			</div>
+<!-- Main -->
+<div id="main" class="wrapper style1">
+	<section class="container">
+		<header class="major">
+			<h2>Pendemic Informations</h2>
+			<span class="byline">Coronavirus Definition, Symptoms and Prevention measures</span>
+			
+		</header>
+
+		<div id="widget">
+			<h2 style="text-align:center;">CoViD-19 Current Situation in Malaysia​ <img src="images/myflag.svg"></h2>
+			<table style="background-color: #f1f3ffff; height: auto; text-align: center;">
+				<tr>
+				  <th style="color: rgb(77, 156, 245);">CASES</th>
+				  <th style="color: rgb(76, 175, 80);">RECOVERED</th>
+				  <th style="color: rgb(224, 109, 109);">DEATHS</th>
+				</tr>
+				<tr>
+				  <td id="cases" style="color: rgb(0, 114, 240);"></td>
+				  <td id="recovered" style="color: rgb(76, 175, 80);"></td>
+				  <td id="deaths" style="color: rgb(211, 47, 47);"></td>
+				</tr>
+			  </table>
+
+			  <div style="text-align:center; font-size: 10px;">
+				Updated by: <span id="updateby"></span>
+				<br>
+				<span>Data from the world health organization</span>
+			  </div>
+			  
+		</div>
+
+		<div>
+			
+			<h2><img src="images/corona.png" alt="Covid 19 symptoms" width="20" height="20" style="vertical-align:middle;margin:0px 50px"> What is Coronavirus?</h2>
+			<p>Corona viruses are a large family of viruses which may cause illness in animals or humans.  In humans, several coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19.</p>
+			<br>
+			<h2><img src="images/corona.png" alt="Covid 19 symptoms" width="20" height="20" style="vertical-align:middle;margin:0px 50px"> What is COVID-19?</h2>
+			<p>COVID-19 is the infectious disease caused by the most recently discovered corona virus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019</p>
+			<br>
+			<h2><img src="images/corona.png" alt="Covid 19 symptoms" width="20" height="20" style="vertical-align:middle;margin:0px 50px">How does COVID-19 spread ?</h2>
+			<p>People can catch COVID-19 from others who have the virus. The disease can spread from person to person through small droplets from the nose or mouth which are spread when a person with COVID-19 coughs or exhales. These droplets land on objects and surfaces around the person. Other people then catch COVID-19 by touching these objects or surfaces, then touching their eyes, nose or mouth. People can also catch COVID-19 if they breathe in droplets from a person with COVID-19 who coughs out or exhales droplets. This is why it is important to stay more than 1 meter (3 feet) away from a person who is sick.</p>
+			<br>
+			<h2><img src="images/corona.png" alt="Covid 19 symptoms" width="20" height="20" style="vertical-align:middle;margin:0px 50px">Can the virus that causes COVID-19 be transmitted through the air? </h2>
+			<p>Studies to date suggest that the virus that causes COVID-19 is mainly transmitted through contact with respiratory droplets rather than through the air.  See previous answer on “How does COVID-19 spread?”</p>
+			<br>
+			<h2><img src="images/corona.png" alt="Covid 19 symptoms" width="20" height="20" style="vertical-align:middle;margin:0px 50px">Can CoVID-19 be caught from a person who has no symptoms? </h2>
+			<p>The main way the disease spreads is through respiratory droplets expelled by someone who is coughing. The risk of catching COVID-19 from someone with no symptoms at all is very low. However, many people with COVID-19 experience only mild symptoms. This is particularly true at the early stages of the disease. It is therefore possible to catch COVID-19 from someone who has, for example, just a mild cough and does not feel ill. </p>
+			<br>
+			<h2><img src="images/corona.png" alt="Covid 19 symptoms" width="20" height="20" style="vertical-align:middle;margin:0px 50px">Can I catch COVID-19 from the feces of someone with the disease? </h2>
+			<p>The risk of catching COVID-19 from the feces of an infected person appears to be low. While initial investigations suggest the virus may be present in feces in some cases, spread through this route is not a 
+				main feature of the outbreak. The ongoing research on the ways COVID-19 is spread and will continue to share new findings. Because this is a risk, however, it is another reason to clean hands regularly, after using the bathroom and before eating</p>
+			<br>
+			<br>
+		</div>
+		<div class="row">
+					
+			<!-- Content -->
+				<div class="6u">
+					<section>
+						<ul>
+							<li>
+						
+								<img src="images/symptoms.png" alt="Covid 19 symptoms" width="150" height="150" style="vertical-align:middle;margin:0px 50px"> 
+								<h3>Symptoms of covid19</h3>
+								<h4>Most common symptoms are</h4>
+								<ul style="list-style-type: circle;">
+									<li>Fever</li>
+									<li>Dry cough</li>
+									<li>Tiredness</li>
+								</ul>
+								<h4>Less common symptoms are</h4>
+								<ul style="list-style-type: circle;">
+									<li>Aches and pains</li>
+									<li>Sore throat</li>
+									<li>Headache</li>
+									<li>Loss of taste or smell</li>
+									<li>A rash on skin, or discoloration of fingers or toes</li>
+								</ul>
+								<h4>Serious symptoms</h4>
+								<ul style="list-style-type: circle;">
+									<li>Difficulty breathing or shortness of breath</li>
+									<li>Chest pain or pressure</li>
+									<li>Loss of speech or movement</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</div>
+				<div class="6u">
+					<section>
+						<ul>
+							<li>
+								<img src="images/prevention.png" alt="Covid 19 prevention" width="150" height="150" style="vertical-align:middle;margin:0px 50px">
+								<h3>Prevention measures for covid19</h3>
+								<ul style="list-style-type: circle;">
+									<li>Clean your hands often, Use soap and water, or an alcohol-based hand rub</li>
+									<li>Maintain a safe distance from anyone who is coughing or sneezing.</li>
+									<li>Wear a mask when physical distancing is not possible.</li>
+									<li>Don’t touch your eyes, nose or mouth.</li>
+									<li>Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</li>
+									<li>Stay home if you feel unwell.</li>
+									<li>If you have a fever, cough and difficulty breathing, seek medical attention.</li>
+								</ul>
+								<span>For this situation every time try to use mask. Masks can help prevent the spread of the virus from the person wearing the mask to others.  And very important is physical distancing. Keep distance from others minimum 1 meter.</span>
+							</li>
+						</ul>
+					</section>
+				</div>
+
+		</div>
+	</section>
+</div>
+
+		<!-- Featured -->
+			<div class="wrapper style2">
+				<section class="container">
+					<header class="major">
+						<h2>Nulla luctus eleifend</h2>
+						<span class="byline">Mauris vulputate dolor sit amet nibh</span>
+					</header>
+					<div class="row no-collapse-1">
+						<section class="4u">
+							<a href="#" class="image feature"><img src="images/pic02.jpg" alt=""></a>
+							<p>Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat.</p>
+						</section>
+						<section class="4u">
+							<a href="#" class="image feature"><img src="images/pic03.jpg" alt=""></a>
+							<p>Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis. Donec magna.</p>
+						</section>
+						<section class="4u">
+							<a href="#" class="image feature"><img src="images/pic04.jpg" alt=""></a>
+							<p>Curabitur sem urna, consequat vel, suscipit convallis sem leo, mattis placerat, nulla. Sed ac leo.</p>
+						</section>
+	
+					</div>
+				</section>
+			</div>
+
+		<!-- Main -->
+			<div id="main" class="wrapper style1">
+				<section class="container">
+					<header class="major">
+						<h2>Nulla luctus eleifend</h2>
+						<span class="byline">Mauris vulputate dolor sit amet nibh</span>
+					</header>
+					<div class="row">
+					
+						<!-- Content -->
+							<div class="6u">
+								<section>
+									<ul class="style">
+										<li>
+											<span class="fa fa-wrench"></span>
+											<h3>Integer ultrices</h3>
+											<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim.</span>
+										</li>
+										<li>
+											<span class="fa fa-cloud"></span>
+											<h3>Aliquam luctus</h3>
+											<span>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span>
+										</li>
+									</ul>
+								</section>
+							</div>
+							<div class="6u">
+								<section>
+									<ul class="style">
+										<li>
+											<span class="fa fa-cogs"></span>
+											<h3>Integer ultrices</h3>
+											<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim.</span>
+										</li>
+										<li>
+											<span class="fa fa-leaf"></span>
+											<h3>Aliquam luctus</h3>
+											<span>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span>
+										</li>
+									</ul>
+								</section>
+							</div>
+
+					</div>
+				</section>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+
+					<!-- Lists -->
+						<div class="row">
+
+							<div class="12u">
+								<section>
+									<header class="major">
+										<h2>Donec dictum metus</h2>
+										<span class="byline">Mattis wisi maecenas ligula</span>
+									</header>
+									<ul class="contact">
+										<li>
+											<span class="address">Address</span>
+											<span>1234 Somewhere Road #4285 <br />Nashville, TN 00000</span>
+										</li>
+										<li>
+											<span class="mail">Mail</span>
+											<span><a href="#">someone@untitled.tld</a></span>
+										</li>
+										<li>
+											<span class="phone">Phone</span>
+											<span>(000) 000-0000</span>
+										</li>
+									</ul>	
+								</section>
+							</div>
+						</div>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+						</div>
+
+				</div>
+			</div>
+
+	</body>
+</html>
